@@ -1,26 +1,29 @@
-//a
+using System.Xml.Linq;
 
-(int, string, char, string, ulong) kort = (23, "me too", 'h', "plam s", 200000000);
+var tuple1 = (32700, "cat", "k", "song", 184467440737095516);
+var tuple2 = (32700, "dog", "b", "song", 184467440737095516);
+Console.WriteLine(tuple1);
+Console.WriteLine(tuple1.Item1);
+Console.WriteLine(tuple1.Item3);
+Console.WriteLine(tuple1.Item4);
 
-//b
+var (cost, pet, k, word, number) = tuple1;
+Console.WriteLine($"\nЦена: {cost}, Питомец: {pet}, Символ: {k}, Слово: {word}, Номер: {number}");
 
-Console.WriteLine("вывод всего кортежа котетджа: " + kort);
-Console.WriteLine("вывод по чето там");
-Console.WriteLine($"1 - {kort.Item1}");
-Console.WriteLine($"3 - {kort.Item3}");
+(string name, int age, string city) = ("Анна", 23, "Бобруйск");
+Console.WriteLine($"\nИмя: {name}, Возраст: {age}, Город: {city}");
 
-//c
+var shop = ("apple", "Belarus", 12, "green");
+var (title, country, price, _) = shop;
+Console.WriteLine($"\nТовар: {title}, Страна: {country}, Стоимость: {price}BYN");
 
-var (num, pfrasa, sumb, phs, bnum) = kort;
-Console.WriteLine($"розпакоуука: {num}, {pfrasa}, {sumb}, {phs}, {bnum}");
-var (num1, _, _, phs1, bnum1) = kort;
-Console.WriteLine($"{num1}, {phs1}, {bnum1}");
+if (tuple1 == tuple2)
+{
+    Console.WriteLine("\nРавны!");
 
-//d
-
-var k1 = (2, 3);
-var k2 = (3, 4);
-var k3 = (2, 3);
-Console.WriteLine($"k1 и k2 - {k1 == k2}");
-Console.WriteLine($"k1 и k3 - {k1 == k3}");
-Console.WriteLine($"k3 и k2 - {k3 == k2}");
+}
+else
+{
+ Console.WriteLine("\nНе равны!");
+}
+   
