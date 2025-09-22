@@ -1,68 +1,79 @@
-//a
+using System;
 
-int[,] arr = { { 1, 2 }, { 3, 4 }, { 5, 6 } };
+int[,] nums = { { 10, 9, 8 }, { 7, 6, 5 } };
 
-for (int i = 0; i < arr.GetLength(0); i++)
+int rows = nums.GetLength(0);
+int columns = nums.GetLength(1);
+
+Console.WriteLine("Задание 3\na)");
+for (int i = 0; i < rows; i++)
 {
-    for (int j = 0; j < arr.GetLength(1); j++)
+    for (int j = 0; j < columns; j++)
     {
-        Console.Write($"{arr[i, j],2}");
-    }
-    Console.WriteLine();
-}
-
-//b
-
-int[] arr1 = { 1, 2, 3, 4 };
-Console.WriteLine("масСив:");
-for (int i = 0;i < arr1.GetLength(0); i++)
-{
-    Console.Write(arr1[i]);
-}
-Console.WriteLine($"\nдлинна: {arr1.Length}");
-
-Console.WriteLine("ввод номера элемента для замены - ");
-int index = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("ввод нового значения - ");
-int val =  Convert.ToInt32(Console.ReadLine());
-arr1[index] = val;
-Console.WriteLine("нови массив:");
-for (int i = 0; i < arr1.GetLength(0); i++)
-{
-    Console.Write(arr1[i]);
-}
-
-//c
-
-int[][] mass = new int[3][];
-mass[0] = new int[2];
-mass[1] = new int[3];
-mass[2] = new int[4];
-Console.WriteLine("\nввод значений ступенчатого масива");
-for (int i = 0; i < mass.Length; i++)
-{
-    for(int j = 0;  j < mass[i].Length; j++)
-    {
-        mass[i][j] = Convert.ToInt32(Console.ReadLine());
-    }
-}
-for (int i = 0; i < mass.Length; i++)
-{
-    for (int j = 0; j < mass[i].Length; j++)
-    {
-        Console.Write($"{mass[i][j], 2}");
+        Console.Write($"{nums[i, j]} \t");
     }
     Console.WriteLine();
 }
 
 
-//d
-
-var ar = new int[] { 1, 2, 3 };
-Console.WriteLine("неявно типизированный массив");
-for(int i = 0;  i < ar.GetLength(0); i++)
+Console.WriteLine("\nb)");
+string[] arr = { "apple", "men", "orange", "sea", "song" };
+Console.WriteLine($"Длина массива: {arr.Length}\nМассив:");
+for (int i = 0; i < arr.Length; i++)
 {
-    Console.Write( ar[i] + " ");
+    Console.WriteLine(arr[i]);
 }
-var txt = "kjh";
-Console.WriteLine("\nтакая же строка" + txt);
+
+Console.Write("Введите индекс элемента для замены: ");
+int index = Convert.ToInt32(Console.ReadLine())-1;
+
+if (index >= 0 && index < arr.Length)
+{
+    Console.Write("Введите новое значение: ");
+    string newValue = Console.ReadLine();
+    arr[index] = newValue;
+
+    Console.WriteLine("Массив после замены:");
+    for (int i = 0; i < arr.Length; i++)
+    {
+        Console.WriteLine(arr[i]);
+    }
+}
+else
+{
+    Console.WriteLine("Неверный индекс!");
+}
+
+
+Console.WriteLine("\nc)");
+int[][] arr2 = new int[3][];
+arr2[0] = new int[2];
+arr2[1] = new int[3];
+arr2[2] = new int[4];
+for (int i = 0; i < arr2.Length; i++)
+{
+    Console.WriteLine($"Введите {arr2[i].Length} чисел для строки {i + 1}:");
+    for (int j = 0; j < arr2[i].Length; j++)
+    {
+        arr2[i][j] = Convert.ToInt32(Console.ReadLine());
+    }
+}
+
+Console.WriteLine("\nЗаполненный массив:");
+for (int i = 0; i < arr2.Length; i++)
+{
+    for (int j = 0; j < arr2[i].Length; j++)
+    {
+        Console.Write(arr2[i][j]+" "); 
+    }
+    Console.WriteLine();
+}
+
+
+Console.WriteLine("\nd)");
+
+var myString = "Это строка с типом";
+var arr3 = new[] { 10, 20, 30, 40, 50 };
+
+Console.WriteLine($"Строка: {myString} - {myString.GetType()}");
+Console.WriteLine($"Массив: [{string.Join(", ", arr3)}] - тип: {arr3.GetType()}");
