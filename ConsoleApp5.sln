@@ -1,25 +1,42 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.13.35919.96 d17.13
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp5", "ConsoleApp5\ConsoleApp5.csproj", "{97C41425-A82E-4986-9085-DBB15136151F}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{97C41425-A82E-4986-9085-DBB15136151F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{97C41425-A82E-4986-9085-DBB15136151F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{97C41425-A82E-4986-9085-DBB15136151F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{97C41425-A82E-4986-9085-DBB15136151F}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {70959E82-6B4B-4703-875F-590391FD182A}
-	EndGlobalSection
-EndGlobal
+using System;
+class Class1
+{
+    static void Main()
+    {
+        (int max, int min, int sum, char firLet) fun(int[] num, string bukavi)
+        {
+            int max = num[0];
+            int min = num[0];
+            int sum = 0;
+
+
+            for (int i = 0; i < num.Length; i++)
+            {
+                if (num[i] > max)
+                {
+                    max = num[i];
+                }
+                if (num[i] < min)
+                {
+                    min = num[i];
+                }
+                sum += num[i];
+            }
+            char firLet = ' ';
+            if (bukavi.Length > 0)
+            {
+                firLet = bukavi[0];
+            }
+            return (max, min, sum, firLet);
+        }
+
+
+        int[] arr = { 1, 2, 3, 4, 5 };
+        string text = "jojo";
+
+        var res = fun(arr, text);
+        Console.WriteLine($"max: {res.max}, min: {res.min}, sum: {res.sum}, FirstLetter: {res.firLet}");
+
+
+    }
+}
