@@ -1,25 +1,72 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.13.35919.96 d17.13
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{2CAE3B93-80DF-43F7-9057-22FAE9FB2EE8}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2CAE3B93-80DF-43F7-9057-22FAE9FB2EE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2CAE3B93-80DF-43F7-9057-22FAE9FB2EE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2CAE3B93-80DF-43F7-9057-22FAE9FB2EE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2CAE3B93-80DF-43F7-9057-22FAE9FB2EE8}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {DB15ED6B-1804-48E1-9D31-4105DD20D9F5}
-	EndGlobalSection
-EndGlobal
+using System.Text;
+
+//a
+
+string s1 = "asd";
+string s2 = "ASD";
+string s3 = "asd";
+Console.WriteLine(s1==s2);
+Console.WriteLine(s1 == s3);
+
+//b
+
+string s4 = "ku";
+string s5 = "ki";
+string s6 = "kako";
+string s7 = "hjhj klkl";
+Console.WriteLine("\nизначальные строки: ");
+Console.WriteLine(s4 + ", " + s5 + ", " + s6 + ", " + s7);
+
+string cont = string.Concat( s4, s5, s6);
+Console.WriteLine("\n сцепление " + cont);
+
+string cop =  s5;
+Console.WriteLine("копирование (Copy является устаревшим) " + cop);
+
+string sub = s6.Substring(2, 2);
+Console.WriteLine("выделение подстроки "+ sub);
+
+string[] words = s7.Split(' ');
+Console.WriteLine("разделение строки " + s7 + " на слова: ");
+foreach (string word in words)
+{
+    Console.WriteLine(word);
+}
+
+string ins = s4.Insert(2, "yep");
+Console.WriteLine("вставка подстроки в определенную позицию: " + ins);
+
+string rem = s6.Remove(1, 2);
+Console.WriteLine("удаление щаданной подстроки: " + rem);
+
+string rt = "pog";
+string kj = "kol";
+Console.WriteLine($"интерполированная строка { rt}, ну и еще чет {kj}");
+
+//c
+
+string pust = "";
+string nll = null;
+Console.WriteLine("\nфункция string.IsNullOrEmpty. проверяет ппустая строка или нулл");
+Console.WriteLine(string.IsNullOrEmpty(pust));
+Console.WriteLine(string.IsNullOrEmpty(nll));
+Console.WriteLine(string.IsNullOrEmpty("dfgkj"));
+
+if (nll == null)
+{
+    Console.WriteLine("нулл строка");
+}
+
+//d
+
+StringBuilder sb = new StringBuilder("stringBububu");
+Console.WriteLine("\nстрока: " + sb);
+
+sb.Remove(6, 4);
+Console.WriteLine($"удаление символв {sb}");
+
+sb.Insert(0, "fy");
+Console.WriteLine($"добавление чего-то в начало строки {sb}");
+
+sb.Append(" haha");
+Console.WriteLine($"длбавление чекго то в концк {sb}");
