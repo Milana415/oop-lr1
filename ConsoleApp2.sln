@@ -1,72 +1,51 @@
+using System.Data.SqlTypes;
 using System.Text;
+using static System.Net.Mime.MediaTypeNames;
 
-//a
+Console.WriteLine("Задание 2");
 
-string s1 = "asd";
-string s2 = "ASD";
-string s3 = "asd";
-Console.WriteLine(s1==s2);
-Console.WriteLine(s1 == s3);
+string name = "Anna";
+string fio = "Fedorenko Anna";
 
-//b
+var result = string.Equals(name, fio);
+Console.WriteLine($"a) {result}");
 
-string s4 = "ku";
-string s5 = "ki";
-string s6 = "kako";
-string s7 = "hjhj klkl";
-Console.WriteLine("\nизначальные строки: ");
-Console.WriteLine(s4 + ", " + s5 + ", " + s6 + ", " + s7);
 
-string cont = string.Concat( s4, s5, s6);
-Console.WriteLine("\n сцепление " + cont);
 
-string cop =  s5;
-Console.WriteLine("копирование (Copy является устаревшим) " + cop);
+string hello = "Hello";
+string dot = ".";
+string world = "world";
+string s3 = hello + dot + world;
+string s4 = string.Copy(s3);
+string s5 = s3.Substring(4, 6);
 
-string sub = s6.Substring(2, 2);
-Console.WriteLine("выделение подстроки "+ sub);
-
-string[] words = s7.Split(' ');
-Console.WriteLine("разделение строки " + s7 + " на слова: ");
-foreach (string word in words)
+Console.WriteLine($"b) {s3}\n{s4}\n{s5}");
+string s6 = "Буря мглою небо кроет";
+string[] words = s6.Split(new char[] { ' ' });
+for(int i=0;i<words.Length;i++)
 {
-    Console.WriteLine(word);
+    Console.WriteLine(words[i]);
 }
+hello = hello.Insert(5, name);
+Console.WriteLine(hello);
 
-string ins = s4.Insert(2, "yep");
-Console.WriteLine("вставка подстроки в определенную позицию: " + ins);
+hello = hello.Remove(hello.Length-2);
+Console.WriteLine(hello);
 
-string rem = s6.Remove(1, 2);
-Console.WriteLine("удаление щаданной подстроки: " + rem);
 
-string rt = "pog";
-string kj = "kol";
-Console.WriteLine($"интерполированная строка { rt}, ну и еще чет {kj}");
+string nullString = null;
+string emptyString = "";
 
-//c
+Console.WriteLine($"c) nullString: {string.IsNullOrEmpty(nullString)}");
+Console.WriteLine($"emptyString: {string.IsNullOrEmpty(emptyString)}");
+Console.WriteLine($"normalString: {string.IsNullOrEmpty(hello)}");
 
-string pust = "";
-string nll = null;
-Console.WriteLine("\nфункция string.IsNullOrEmpty. проверяет ппустая строка или нулл");
-Console.WriteLine(string.IsNullOrEmpty(pust));
-Console.WriteLine(string.IsNullOrEmpty(nll));
-Console.WriteLine(string.IsNullOrEmpty("dfgkj"));
+StringBuilder sb = new StringBuilder(s6);
+sb.Remove(3, 5);
+Console.WriteLine(sb);
 
-if (nll == null)
-{
-    Console.WriteLine("нулл строка");
-}
+sb.Append(hello);
+Console.WriteLine(sb);
 
-//d
-
-StringBuilder sb = new StringBuilder("stringBububu");
-Console.WriteLine("\nстрока: " + sb);
-
-sb.Remove(6, 4);
-Console.WriteLine($"удаление символв {sb}");
-
-sb.Insert(0, "fy");
-Console.WriteLine($"добавление чего-то в начало строки {sb}");
-
-sb.Append(" haha");
-Console.WriteLine($"длбавление чекго то в концк {sb}");
+sb.Insert(0, name);
+Console.WriteLine(sb);
