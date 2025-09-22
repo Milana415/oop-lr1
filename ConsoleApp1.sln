@@ -1,72 +1,79 @@
-using System.Text;
-
 //a
+bool a = true;
+byte  b = 255;
+sbyte c = -128;
+char d = 'd';
+double e = 2.398347530;
+int f = -567;
+uint g = 34;
+string h = "skjgu";
 
-string s1 = "asd";
-string s2 = "ASD";
-string s3 = "asd";
-Console.WriteLine(s1==s2);
-Console.WriteLine(s1 == s3);
+Console.WriteLine("a = " + a + " логический тип");
+Console.WriteLine("b = " + b + " числовой тип от 0 до 255");
+Console.WriteLine("c = " + c + " числовой тип от -128 до 127");
+Console.WriteLine("d = " + d + " символьный тип");
+Console.WriteLine("e = " + e + " числовой тип с плавающей точкой");
+Console.WriteLine("f = " + f + " числовой тип с отрицательными значениями");
+Console.WriteLine("g = " + g + " числовой тип без отрицательных значений");
+Console.WriteLine("h = " + h + " строковой тип");
+
+Console.WriteLine("ввод значения для int");
+int q = Convert.ToInt32(Console.ReadLine()) ;
+Console.WriteLine("значениe введеное = " + q);
+
+Console.WriteLine("ввод значения для строки");
+string? w = Console.ReadLine();
+Console.WriteLine("строка = " + w);
+
 
 //b
+double yu = 34.5;
+int ty = (int)yu;
+Console.WriteLine(ty);
 
-string s4 = "ku";
-string s5 = "ki";
-string s6 = "kako";
-string s7 = "hjhj klkl";
-Console.WriteLine("\nизначальные строки: ");
-Console.WriteLine(s4 + ", " + s5 + ", " + s6 + ", " + s7);
+int aa = 24;
+float bb = aa;
+double cc = bb;
+long dd = aa;
+decimal ss = aa;
+Console.WriteLine("неявное преобразование " + aa + " " + bb + " " + cc + " " + " " + dd + " " + ss) ;
 
-string cont = string.Concat( s4, s5, s6);
-Console.WriteLine("\n сцепление " + cont);
+double i = 34.235743455;
+float j = (float)i;
+int k = (int)i;
+short l = (short)k;
+byte m = (byte)l;
+decimal n= (decimal)i;
+Console.WriteLine("явное преобразование " + i + " " + j + " " + k + " " + " " + l + " " + m + " " + n);
 
-string cop =  s5;
-Console.WriteLine("копирование (Copy является устаревшим) " + cop);
-
-string sub = s6.Substring(2, 2);
-Console.WriteLine("выделение подстроки "+ sub);
-
-string[] words = s7.Split(' ');
-Console.WriteLine("разделение строки " + s7 + " на слова: ");
-foreach (string word in words)
-{
-    Console.WriteLine(word);
-}
-
-string ins = s4.Insert(2, "yep");
-Console.WriteLine("вставка подстроки в определенную позицию: " + ins);
-
-string rem = s6.Remove(1, 2);
-Console.WriteLine("удаление щаданной подстроки: " + rem);
-
-string rt = "pog";
-string kj = "kol";
-Console.WriteLine($"интерполированная строка { rt}, ну и еще чет {kj}");
+string name = "3245";
+int nm = Convert.ToInt32(name);
+Console.WriteLine("convert " + name + " " + nm);
 
 //c
 
-string pust = "";
-string nll = null;
-Console.WriteLine("\nфункция string.IsNullOrEmpty. проверяет ппустая строка или нулл");
-Console.WriteLine(string.IsNullOrEmpty(pust));
-Console.WriteLine(string.IsNullOrEmpty(nll));
-Console.WriteLine(string.IsNullOrEmpty("dfgkj"));
+int val = 678;
+object box = val;
+val = 12;
+Console.WriteLine("запакованное значение =  " + box + " незапаков значение = " + val);
 
-if (nll == null)
-{
-    Console.WriteLine("нулл строка");
-}
+int unb = (int)box;
+Console.WriteLine(" распак значение = " + unb);
 
 //d
 
-StringBuilder sb = new StringBuilder("stringBububu");
-Console.WriteLine("\nстрока: " + sb);
+var ttr = 34;
+var oj = "wjhgf";
+Console.WriteLine("неявные типы переменных: " + ttr + ", " + oj);
 
-sb.Remove(6, 4);
-Console.WriteLine($"удаление символв {sb}");
+//e
 
-sb.Insert(0, "fy");
-Console.WriteLine($"добавление чего-то в начало строки {sb}");
+int? tyu = null; 
+Console.WriteLine("значения нет " +tyu);
 
-sb.Append(" haha");
-Console.WriteLine($"длбавление чекго то в концк {sb}");
+tyu = 809;
+Console.WriteLine(tyu);
+
+//f
+//var jk = 35; jk = "sdf";
+
